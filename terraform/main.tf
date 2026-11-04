@@ -7,6 +7,12 @@ terraform {
       version = "~> 6.0"
     }
   }
+  backend "s3" {
+bucket = "bran-terraform-state-bucket"
+key = "terraform/terraform.tfstate"
+region = "us-east-1"
+use_lockfile = true
+}
 }
 
 locals {
